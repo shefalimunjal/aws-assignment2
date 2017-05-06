@@ -1,0 +1,11 @@
+region: us-west-2
+
+function_name: post-menu
+handler: post-menu.handler
+role: feedback
+description: post menu
+
+aws_access_key_id: AKIAIDNWS6UHSPMUZOXA
+aws_secret_access_key: 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
+
+

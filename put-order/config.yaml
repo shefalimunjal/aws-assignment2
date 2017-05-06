@@ -1,0 +1,9 @@
+region: us-west-2
+
+function_name: put-order
+handler: put-order.handler
+role: feedback
+description: update order
+
+aws_access_key_id: AKIAIDNWS6UHSPMUZOXA
+aws_secret_access_key: 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

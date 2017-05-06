@@ -1,0 +1,11 @@
+region: us-west-2
+
+function_name: post-order
+handler: post-order.handler
+role: feedback
+description: post orders
+
+aws_access_key_id: AKIAIDNWS6UHSPMUZOXA
+aws_secret_access_key: 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
+
+
