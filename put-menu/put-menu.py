@@ -4,13 +4,11 @@ import json
 import decimal
 from botocore.exceptions import ClientError
 
-dynamodb = boto3.resource('dynamodb', region_name='us-west-2', aws_access_key_id='AKIAIDNWS6UHSPMUZOXA' , aws_secret_access_key='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')
-
-
-table = dynamodb.Table('pizzashop')
+AWS_KEY = '****'
+AWS_SECRET = '****'
 
 def handler(event, context):
-    dynamodb = boto3.resource('dynamodb', region_name='us-west-2', aws_access_key_id='AKIAIDNWS6UHSPMUZOXA' , aws_secret_access_key='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')
+    dynamodb = boto3.resource('dynamodb', region_name='us-west-2', aws_access_key_id=AWS_KEY , aws_secret_access_key=AWS_SECRET)
     table = dynamodb.Table('pizzashop')
 
     menu_id = event['params']['path']['menu-id']
@@ -19,6 +17,9 @@ def handler(event, context):
     update_expression = "set "
     expression_attribute_values = {}
     for key in body:
+        if key == 'menu_id':
+            continue
+
         update_expression += key + " = :" + key + ","
         expression_attribute_values[":" + key] = body[key]
 
